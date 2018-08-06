@@ -17,7 +17,7 @@
 
 - Vue 指令
 
-** v-text 和 v-html **
+**v-text 和 v-html**
 
 ```
 
@@ -37,7 +37,7 @@ const vm = new Vue({
 
 ```
 
-** v-bind 指令 **
+**v-bind 指令**
 
 ```
 
@@ -47,7 +47,7 @@ const vm = new Vue({
 
 ```
 
-** v-on 指令 **
+**v-on 指令**
 
 ```
 
