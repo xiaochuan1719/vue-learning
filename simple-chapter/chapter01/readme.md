@@ -2,6 +2,16 @@
 
 ### 创建一个 Vue 实例
 
+```
+
+const vm = new Vue({
+    el: '#main',
+    data: {
+        message: 'Hello World'
+    }
+});
+
+```
 
 ### 数据与方法
 
