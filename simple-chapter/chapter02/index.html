@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <div id="main">
+
+        <!-- Mustache 语法 -->
+
+        <!-- 大括号表达式 -->
+        <p>Description: {{ message }}</p>
+        <p>Description: {{ en_message.toUpperCase() }}</p>
+
+
+        <!-- Vue 指令  -->
+
+        <!-- v-text 和 v-html -->
+        <p v-text="url_text"></p>   <!-- textContent -->
+        <p v-html="url_text"></p>   <!-- innerHTML -->
+
+
+        <!-- v-bind 指令 -->
+        <p>Vue logo: <img v-bind:src="logo_imgUrl" alt="" width="50px" height="50px"></p>
+        <p>Vue logo: <img :src="logo_imgUrl" alt="" width="50px" height="50px"></p>
+
+
+        <!-- v-on 指令 -->
+        <a href="#" v-on:click="alertGo">Link one</a>
+        <br>
+        <a href="#" @click="confirmGo(tips)">Link two</a>
+
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+</html>

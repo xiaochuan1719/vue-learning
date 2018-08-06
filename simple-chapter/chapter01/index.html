@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+</head>
+<body>
+
+    <!--
+
+        1. 创建 Vue 对象
+        2. 双向数据绑定 v-model
+        3. 数据绑定形式：“Mustache” 语法（双大括号）
+        4. 声明式渲染；
+            - 声明式：告诉“机器”你想要的是什么(what)，让机器想出如何去做(how)
+            - 命令式：命令“机器”如何去做事情(how)，这样不管你想要的是什么(what)，它都会按照你的命令实现
+        5. Vue 的 MVVM 思想
+            - M：model 模型，数据对象
+            - V：view  视图，模板页面
+            - VM：ViewModel  视图模型，vue实例
+    -->
+
+
+    <div id="main">
+        <input type="text" v-model="message">
+        <h1>{{ message }}</h1>
+
+    </div>
+
+    <script src="./index.js"></script>
+
+</body>
+</html>
