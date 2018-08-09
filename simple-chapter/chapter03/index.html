@@ -13,9 +13,16 @@
 <body>
 
 <div id="main">
-
-
-
+    <P>Original message: "{{ message }}"</P>
+    <p>Reverse message by computed: "{{ reverseMessage }}"</p>
+    <p>Reverse message by methods: "{{ reverseWords() }}"</p>
+    <br>
+    <p>CurrentTime (computed): {{ currentDate1 }}</p>
+    <p>CurrentTime (methods): {{ currentDate2() }}</p>
+    <br>
+    <p>FullName: {{ fullName }}</p>
+    <br>
+    <p>The sum of aVal + bVal: {{ sum }}</p>
 </div>
 
 <script src="./index.js"></script>
