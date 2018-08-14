@@ -107,12 +107,16 @@ const vm = new Vue({
     
     computed: {
         fullName: {
+            // 当需要读取当前属性时回调，根据相关属性计算并返回当前属性的值
             get() {
-                
+                return this.firstName + ' ' + this.lastName;
             },
             
-            set(newValue) {
-                
+            // 监视当前属性值的变化，当属性值发生改变时回调，更新相关的属性数据
+            set(value) {
+                const names = value.split(' ');
+                this.firstName = names[0];
+                this.lastName = names[1];
             }
         }
     }

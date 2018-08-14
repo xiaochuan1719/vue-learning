@@ -28,14 +28,17 @@ const vm = new Vue({
         },
 
         // a computed getter and setter
-        sum: {
+        fullNameTwo: {
             // computed the value of sum property
             get() {
-                return this.aVal + this.bVal;
+                return this.firstName + ' ' + this.lastName;
             },
 
-            set(newValue) {
-
+            // value 为 fullNameTwo 最最新属性值
+            set(value) {
+                const names = value.split(' ');
+                this.firstName = names[0];
+                this.lastName = names[1];
             }
 
         }
