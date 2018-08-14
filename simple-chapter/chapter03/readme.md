@@ -125,5 +125,13 @@ const vm = new Vue({
 ```
   
 
+### Watchers
+
+While computed properties are more appropriate in most cases, there are times when a custom watcher is necessary. 
+That’s why Vue provides a more generic way to react to data changes through the watch option. This is most useful 
+when you want to perform asynchronous or expensive operations in response to changing data.  
+
+>当需要在数据变化时执行异步或开销较大的操作时，这个方式是最有用的。  
+
 
 
