@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<div id="main">
+
+    <h3>1. Object Syntax</h3>
+    <div :style="{ backgroundColor: bgColor, color: textColor, fontSize: fontSize + 'px' }">CSS 属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用单引号括起来) 来命名</div>
+    <div :style="styleObject">CSS 属性名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用单引号括起来) 来命名</div>
+
+</div>
+
+<script src="./index02.js"></script>
+
+</body>
+
+</html>

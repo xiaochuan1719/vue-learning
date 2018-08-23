@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+    <style type="text/css">
+        .text-red {
+            color: red;
+            font-size: 20px;
+        }
+
+        .text-bold {
+            font-weight: bolder;
+        }
+
+        .text-green {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="main">
+
+        <h3>1. String Syntax</h3>
+        <p class="text" v-bind:class="redText">字符串语法</p>
+        <button v-on:click="update01">Update01</button>
+
+        <h3>2. Object Syntax</h3>
+        <p v-bind:class="{ 'text-red': isRed, 'text-bold': isBold }">class 存在与否将取决于数据属性的 truthiness</p>
+        <p :class="classObj">绑定的数据对象不必内联定义在模板里</p>
+        <p :class="classObject">绑定一个返回对象的计算属性</p>
+        <button v-on:click="update02">Update02</button>
+
+        <h3>3. Array Syntax</h3>
+        <p :class="[textRedClass, textBoldClass]">把一个数组传给 v-bind:class，以应用一个 class 列表</p>
+        <p :class="[isTextRed ? textRedClass : '', textBoldClass]">根据条件切换列表中的 class，可以用三元表达式</p>
+        <p :class="[{ 'text-red': isTextRed }, textBoldClass]">在数组语法中也可以使用对象语法</p>
+        <button @click="update03">Update03</button>
+
+    </div>
+
+    <script src="./index01.js"></script>
+
+</body>
+
+</html>
