@@ -15,7 +15,16 @@
 
 <div id="main">
 
+    <h3>1. v-if 指令</h3>
+    <p v-if="isView">Yes</p>
+    <p v-else>No</p>
 
+    <h3>2. 在 &lt;template&gt; 元素上使用 v-if 条件渲染分组</h3>
+    <template v-if="isViewTemplate">
+        <h1>Title</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+    </template>
 
 </div>
 
