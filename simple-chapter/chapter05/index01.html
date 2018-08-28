@@ -26,6 +26,28 @@
         <p>Paragraph 2</p>
     </template>
 
+    <h3>3. v-else 指令</h3>
+    <div v-if="Math.random() > 0.5">
+        Now you see me
+    </div>
+    <div v-else>
+        Now you don't
+    </div>
+
+    <h3>4. v-else-if 指令</h3>
+    <div v-if="type === 'A'">
+        Character A
+    </div>
+    <div v-else-if="type === 'B'">
+        Character B
+    </div>
+    <div v-else-if="type === 'C'">
+        Character C
+    </div>
+    <div v-else>
+        Not A/B/C
+    </div>
+
 </div>
 
 <script src="./index01.js"></script>
