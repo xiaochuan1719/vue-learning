@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<div id="main">
+
+    <h3>用 key 管理可复用的元素</h3>
+
+    <template v-if="loginType === 'username'">
+        <label>UserName</label>
+        <input type="text" placeholder="Enter your name">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input type="text" placeholder="Enter your email">
+    </template>
+
+    <!--
+        首先在 input 输入框中输入内容，然后如果我们修改 vm.loginType = 'email'，我们会发现我们切换了loginType，但是不会清除用户已经输入的内容。
+        因为两个 template 使用了相同的元素（被复用），input也仅仅是替换了 placeholder 的值。
+    -->
+
+    <br>
+    <br>
+    <br>
+
+    <!--
+        从上例看，实际上 username 输入 和 email 输入是相互独立的，所以不需要复用它们，我们可以使用 key 属性进行管理元素的复用情况
+    -->
+
+    <template v-if="loginType === 'username'">
+        <label>UserName</label>
+        <input type="text" placeholder="Enter your username" key="username-input">
+    </template>
+    <template v-else>
+        <label>Email</label>
+        <input type="text" placeholder="Enter your email addr" key="email-input">
+    </template>
+
+</div>
+
+<script src="./index02.js"></script>
+
+</body>
+
+</html>
