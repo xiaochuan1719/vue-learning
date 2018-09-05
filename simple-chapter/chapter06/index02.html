@@ -1,10 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
 </head>
+
 <body>
 
+<div id="main">
+
+    <h3>1. 用 v-for 把一个数组对应为一组元素</h3>
+    <h4>JavaScript Framework</h4>
+    <ul id="example01">
+        <li v-for="item in jsFrameworkArr">
+            {{ item.name }}
+        </li>
+    </ul>
+
+
+    <h4>Java Framework</h4>
+    <ul id="example02">
+        <li v-for="(item, index) of javaFrameworkArr">
+            {{ index + 1 }} > {{ item.name }}
+        </li>
+    </ul>
+
+</div>
+
+<script src="./index01.js"></script>
+
 </body>
+
 </html>
