@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+<div id="main">
+
+    <h3>v-show 指令</h3>
+    <template v-show="isShow">
+        <p>根据条件展示元素的选项</p>
+        <p>不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。</p>
+    </template>
+
+    <button @click="toggleShow">Toggle Show</button>
+
+    <div :style="styleObj" v-show="isShow">
+        <p>根据条件展示元素的选项</p>
+        <p>不同的是带有 v-show 的元素始终会被渲染并保留在 DOM 中。v-show 只是简单地切换元素的 CSS 属性 display。</p>
+    </div>
+
+</div>
+
+<script src="./index03.js"></script>
+
+</body>
+
+</html>
