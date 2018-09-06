@@ -15,25 +15,17 @@
 
 <div id="main">
 
-    <h3>1. 用 v-for 把一个数组对应为一组元素</h3>
+    <h3>1. v-for 迭代一个对象 </h3>
     <h4>JavaScript Framework</h4>
     <ul id="example01">
-        <li v-for="item in jsFrameworkArr">
-            {{ item.name }}
-        </li>
-    </ul>
-
-
-    <h4>Java Framework</h4>
-    <ul id="example02">
-        <li v-for="(item, index) of javaFrameworkArr">
-            {{ index + 1 }} > {{ item.name }}
+        <li v-for="(value, key, index) in exampleObj">
+            {{ index }}、{{ key }}: {{ value }}
         </li>
     </ul>
 
 </div>
 
-<script src="./index01.js"></script>
+<script src="./index02.js"></script>
 
 </body>
 
