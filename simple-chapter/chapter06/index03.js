@@ -12,6 +12,12 @@ const vm = new Vue({
 
         updateArrBySort () {
             this.items.sort();
+        },
+
+        updateArrByMutationMethod () {
+            this.items = this.items.filter(function (item) {
+                return item.match(/a/g);
+            });
         }
 
     }

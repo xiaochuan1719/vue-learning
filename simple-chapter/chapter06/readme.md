@@ -111,3 +111,42 @@ example.items = example.items.filter(function(item) {
 });
 ```
 
+#### #注意事项
+由于 JS 的限制，Vue 不能检测以下变动的数组：  
+1. 利用索引直接设置一个项时，如: `vm.items[indexOfItem] = newValue`  
+2. 修改数组长度时，如: `vm.items.length = newLength`  
+
+举个栗子：
+```js
+const vm = new Vue({
+    el: '#example'
+    data: {
+        items: ['a', 'b', 'c']
+    }
+});
+
+vm.items[1] = 'x';
+vm.items.length = 5;
+
+// 以上均不会响应触发视图的更新
+
+```
+
+解决方案：  
+1. 解决第一类问题  
+```js
+// Vue.set()
+Vue.set(vm.items, indexOfItem, newValue);
+
+vm.$set(vm.items, indexOfItem, newValue);
+
+// Array.prototype.splice
+vm.items.splice(indexOfItem, 1, newValue);
+
+```
+2. 解决第二类问题  
+```js
+vm.items.splice(newLength);
+```
+
+
