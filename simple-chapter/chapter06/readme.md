@@ -150,3 +150,117 @@ vm.items.splice(newLength);
 ```
 
 
+### 对象更改检测注意事项
+
+**Vue 不能检测对象属性的添加或删除**  
+
+对于已经创建的 Vue 实例，Vue 不能动态添加根级别的响应式属性。但可以使用 `Vue.set(object, key, value)` 方法向嵌套对象添加响应式属性。
+```js
+const vm = new Vue({
+    data: {
+        userProfile: {
+            name: 'Anna'
+        }
+    }
+});
+
+
+// 嵌套对象 userProfile 中添加一个新的 age 属性
+Vue.set(vm.userProfile, 'age', 20);
+vm.$set(vm.userProfile, 'age', 18);
+
+// 如果要添加多个新的响应式属性，直接通过 Object.assign(object, newObj) 是不行的，你应该这样做：
+vm.userProfile = Object.assign(vm.userProfile, {
+   age: 18,
+   favoriteColor: 'red, green' 
+});
+
+
+```
+
+
+### 显示过滤/排序结果
+
+需求：显示一个过滤或排序后的数组，而不实际改变或重置原始数据  
+方案：创建返回过滤或排序数组的计算属性和方法  
+
+```html
+<li v-for="num in evenNumbers">{{ num }}</li>
+<li v-for="num in even(numbers)">{{ num }}</li>
+```
+```js
+const vm = new Vue({
+    el: '#main',
+    data: {
+        numbers: [1, 2, 3, 4, 5]
+    },
+    
+    computed: {
+        evenNumbers: function() {
+            return this.numbers.filter(function(number) {
+                return number % 2 === 0;
+            })
+        }
+    },
+    
+    methods: {
+        even: function(numbers) {
+            return numbers.filter(function(number) {
+                return number % 2 === 0;
+            });
+        }
+    }
+});
+```
+
+
+### v-for with a Range
+`v-for` can also take an integer. In this case it will repeat the template that many times.
+
+```html
+<div>
+    <span v-for="n in 10">{{ n }}</span>
+</div>
+```
+
+### v-for on a <template>
+Similar to template `v-if`, you can also use a `<template>` tag with `v-for` to render a block of multiple elements.
+
+```html
+<ul>
+    <template v-for="item of items">
+        <li>{{ item.msg }}</li>
+        <li class="divider" role="presentation"></li>
+    </template>
+</ul>
+``` 
+
+
+### v-for with v-if
+When they exist on the same node,  `v-for` has a higher priority than `v-if` .That means the `v-if` will be run on each iteration of the loop separately.
+
+```html
+// the example only renders the todos that are not complete
+<li v-for="todo in todos" v-if="!todo.isComplete">
+    {{ todo.msg }}
+</li>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
