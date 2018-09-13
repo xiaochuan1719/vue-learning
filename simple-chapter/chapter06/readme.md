@@ -223,7 +223,7 @@ const vm = new Vue({
 </div>
 ```
 
-### v-for on a <template>
+### v-for on a <template>   
 Similar to template `v-if`, you can also use a `<template>` tag with `v-for` to render a block of multiple elements.
 
 ```html
@@ -233,7 +233,7 @@ Similar to template `v-if`, you can also use a `<template>` tag with `v-for` to 
         <li class="divider" role="presentation"></li>
     </template>
 </ul>
-``` 
+```
 
 
 ### v-for with v-if
