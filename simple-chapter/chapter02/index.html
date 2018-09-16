@@ -7,7 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+    <style type="text/css">
+        [v-cloak] {
+            display: none;
+
+        }
+    </style>
+
+    <!--<script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>-->
 
 </head>
 <body>
@@ -17,8 +24,8 @@
         <!-- Mustache 语法 -->
 
         <!-- 大括号表达式 -->
-        <p>Description: {{ message }}</p>
-        <p>Description: {{ en_message.toUpperCase() }}</p>
+        <p v-cloak>Description: {{ message }}</p>
+        <p v-cloak>Description: {{ en_message.toUpperCase() }}</p>
 
 
         <!-- Vue 指令  -->
@@ -27,6 +34,9 @@
         <p v-text="url_text"></p>   <!-- textContent -->
         <p v-html="url_text"></p>   <!-- innerHTML -->
 
+
+        <!-- v-cloak 指令-->
+        <p v-cloak>{{ message }}</p>
 
         <!-- v-bind 指令 -->
         <p>Vue logo: <img v-bind:src="logo_imgUrl" alt="" width="50px" height="50px"></p>
@@ -40,6 +50,7 @@
 
     </div>
 
+    <script src="../libs/vue.min.js"></script>
     <script src="./index.js"></script>
 
 </body>
