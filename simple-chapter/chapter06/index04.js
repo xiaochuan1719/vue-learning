@@ -15,7 +15,7 @@ const vm = new Vue({
     methods: {
         even: function (numbers) {
             return numbers.filter(function (number) {
-                return number % 2 === 0;
+                return number % 2 === 1;
             });
         }
     }

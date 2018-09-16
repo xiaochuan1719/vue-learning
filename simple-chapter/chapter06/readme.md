@@ -246,6 +246,26 @@ When they exist on the same node,  `v-for` has a higher priority than `v-if` .Th
 </li>
 ```
 
+### v-for with a Component   
+You can directly use `v-for` on a custom component, like any normal element:
+```html
+<my-component v-for="item in items" v-bind:key="item.id"></my-component>
+```
+>Notice: In 2.2.0+, when using `v-for` with a component, a `key` is now required.
+
+However, this won't automatically pass any data to the component, because components have isolated scopes of their own.
+In order to pass the iterated data into the component, we should also use props:
+```html
+<my-component 
+    v-for="(item, index) in itmes"
+    v-bind:item="item"
+    v-bind:index="index"
+    v-bind:key="item.key"
+></my-component>
+```
+
+
+
 
 
 
