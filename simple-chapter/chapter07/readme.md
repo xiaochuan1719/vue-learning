@@ -1,6 +1,7 @@
 ## Event Handling
 
 ### Listening to Events
+
 `v-on` 指令可以监听 DOM 事件，并在触发时执行相关逻辑代码。
 
 ```html
