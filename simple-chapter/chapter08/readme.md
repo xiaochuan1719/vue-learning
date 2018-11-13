@@ -20,5 +20,17 @@ Single checkbox, boolean value: (单个多选框，绑定到布尔值)
 
 Multiple checkbox, bound to the same Array: (多个复选框，绑定到同一个数组)
 ```html
-
+<div id="example-04">
+    <h3>3. Multiple Checkbox</h3>
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="john" value="John" v-model="checkedNames">
+    <label for="john">John</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    <label for="mike">Mike</label>
+    <br>
+    <span>Checked Names: {{ checkedNames }}</span>
+</div>
 ```
+
+#### #Radio 

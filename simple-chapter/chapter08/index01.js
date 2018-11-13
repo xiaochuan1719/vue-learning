@@ -4,6 +4,9 @@ const vm = new Vue({
         nameText: '',
         message: '',
         checked: false,
-        checkedNames: []
+        checkedNames: [],
+        picked: '',
+        selected: '',
+        multiSelected: []
     }
 });

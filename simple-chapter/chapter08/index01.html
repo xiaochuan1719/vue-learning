@@ -40,7 +40,7 @@
     </div>
 
     <div id="example-04">
-        <h3>3. Multiple Checkbox</h3>
+        <h3>4. Multiple Checkbox</h3>
         <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
         <label for="jack">Jack</label>
         <input type="checkbox" id="john" value="John" v-model="checkedNames">
@@ -49,6 +49,43 @@
         <label for="mike">Mike</label>
         <br>
         <span>Checked Names: {{ checkedNames }}</span>
+    </div>
+
+
+    <div id="example-05">
+        <h3>5. Radio</h3>
+        <input type="radio" id="radio01" value="One" v-model="picked">
+        <label for="radio01">One</label>
+        <br>
+        <input type="radio" id="radio02" value="Two" v-model="picked">
+        <label for="radio02">Two</label>
+        <br>
+        <span>Picked: {{ picked }}</span>
+
+    </div>
+
+    <div id="example-06">
+        <h3>6. Single Select (bound to String)</h3>
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+        <span>Selected: {{ selected }}</span>
+    </div>
+
+    <div id="example-07">
+        <h3>7. Multiple Select (bound to Array)</h3>
+        <select v-model="multiSelected" multiple style="width: 50px">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+            <option>D</option>
+        </select>
+        <span>multiSelected: {{ multiSelected }}</span>
+
     </div>
 
 </div>
