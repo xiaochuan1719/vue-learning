@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+    <style type="text/css">
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div id="main" v-cloak>
+
+    <!-- 复选框 -->
+    <div id="example-01">
+        <input type="checkbox" v-model="toggle"  true-value="yes" false-value="no" value="123">
+
+        <!--
+            当选中时  vm.toggle === 'yes'
+            当没有选中时  vm.toggle === 'no'
+        -->
+    </div>
+
+    <!-- 单选按钮 -->
+    <div id="example-02">
+        <input type="radio" v-model="pick" v-bind:value="aa" >
+
+        <!--
+            当选中时  vm.pick === vm.aa
+        -->
+    </div>
+
+    <!-- 选择框的选项 -->
+    <div id="example-03">
+        <select v-model="selected">
+            <!-- 内联对象字面量 -->
+            <option v-bind:value="{ number: 123 }">123</option>
+        </select>
+
+        <!--
+            当选中时
+            typeof vm.selected     -> 'object'
+            vm.selected.number     -> 123
+        -->
+
+    </div>
+
+
+</div>
+
+<script src="./index02.js"></script>
+
+</body>
+
+</html>

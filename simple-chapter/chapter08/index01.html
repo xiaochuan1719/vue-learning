@@ -85,7 +85,16 @@
             <option>D</option>
         </select>
         <span>multiSelected: {{ multiSelected }}</span>
+    </div>
 
+    <div id="example-08">
+        <h3>8. Dynamic options rendered with v-for </h3>
+        <select v-model="selectedOption">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <span>selectedOption: {{ selectedOption }}</span>
     </div>
 
 </div>

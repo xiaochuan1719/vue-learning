@@ -34,3 +34,41 @@ Multiple checkbox, bound to the same Array: (多个复选框，绑定到同一�
 ```
 
 #### #Radio 
+
+
+#### #Select
+
+
+### Value Bindings
+对于单选按钮，复选框及选择框的选项，`v-model` 绑定的值通常是静态字符串（对于复选框也可以是布尔值）:  
+
+```html
+
+<!-- 当选中是，picked 为字符串 ‘a’ -->
+<input type="radio" v-model="picked" value="a">
+
+<!-- toggle 为 true 或 false -->
+<input type="checkbox" v-model="toggle">
+
+<!-- 当选中第一个选项时，selected 为字符串 ’aaa‘ -->
+<select v-model="selected">
+    <option value=aaa">AAA</option>
+</select>
+
+```
+
+但有时我们可能需要把值绑定到 Vue 实例的一个动态属性上，这时可以用 `v-bind` 实现，且这个属性可以不是字符串。  
+
+
+### Modifiers
+
+#### #.lazy
+默认情况下，`v-model` 在每次 `input` 事件触发后将输入框的值与数据进行同步  
+添加 `laze` 修饰符，从而转变为使用 `change` 事件进行同步（失去焦点时）
+```html
+<input v-model.lazy="msg" >
+```
+
+#### #.number
+
+#### #.trim

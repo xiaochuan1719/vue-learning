@@ -7,6 +7,12 @@ const vm = new Vue({
         checkedNames: [],
         picked: '',
         selected: '',
-        multiSelected: []
+        multiSelected: [],
+        selectedOption: 'A',
+        options: [
+            { text: 'Character A', value: 'A' },
+            { text: 'Character B', value: 'B' },
+            { text: 'Character C', value: 'C' }
+        ]
     }
 });
